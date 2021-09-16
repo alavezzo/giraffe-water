@@ -33,6 +33,7 @@ router.get('/', (req, res) => {
         });
 });
 
+// get specific post 
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -45,6 +46,19 @@ router.get('/:id', (req, res) => {
             console.log(err);
             res.status(500).json(err)
         });
+});
+
+router.post('/', (req, res) => {
+    Post.create({
+        title: req.body.title,
+        post_text: req.body.post_text,
+        user_id: req.session.user_id
+    })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });    
 });
 
 module.exports = router;
