@@ -5,7 +5,6 @@ const { Post, User, Comment } = require('../../models');
 // get all posts
 router.get('/', (req, res) => {
     Post.findAll({
-        order: [['created_at', 'DESC']],
         attributes: [
             'id',
             'title',
@@ -41,7 +40,7 @@ router.get('/:id', (req, res) => {
         },
         
     })
-        .then(dbUserData => res.json(dbUserData))
+        .then(dbPostData => res.json(dbPostData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err)
@@ -54,7 +53,7 @@ router.post('/', (req, res) => {
         post_text: req.body.post_text,
         user_id: req.session.user_id
     })
-    .then(dbUserData => res.json(dbUserData))
+    .then(dbPostData => res.json(dbPostData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -70,11 +69,31 @@ router.put('/:id', (req, res) => {
                 id: req.params.id
             }
         }
-        )
-        .then(dbUserData => 
-            res.json(dbUserData))
+    )
+        .then(dbPostData => 
+            res.json(dbPostData))
         .catch(err => {
             console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.delete('/:id', (req, res) => {
+
+    Post.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'No post found with this id' });
+                return;
+              }
+            res.json(dbPostData)
+        })
+        .catch(err => {
+            console.log(err)
             res.status(500).json(err);
         });
 });
