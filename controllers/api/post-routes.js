@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: Comment, 
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'cretaed_at'],
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -27,6 +27,20 @@ router.get('/', (req, res) => {
         ]
     })
         .then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err)
+        });
+});
+
+router.get('/:id', (req, res) => {
+    Post.findOne({
+        where: {
+            id: req.params.id
+        },
+        
+    })
+        .then(dbUserData => res.json(dbUserData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err)
