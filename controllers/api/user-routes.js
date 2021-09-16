@@ -83,5 +83,27 @@ router.post('/logout', (req, res) => {
     else {
         res.status(404).end();
     }
-})
+});
+
+router.put('/:id', (req, res) => {
+    
+    User.update(req.body, {
+        individualHooks: true,
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbUserData => {
+            if (!dbUserData[0]) {
+                res.status(404).json({ message: 'No user with this id' })
+                return;
+            }
+            res.json(dbUserData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 module.exports = router;

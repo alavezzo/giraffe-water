@@ -61,4 +61,22 @@ router.post('/', (req, res) => {
     });    
 });
 
+router.put('/:id', (req, res) => {
+    
+    Post.update(
+      req.body,
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+        )
+        .then(dbUserData => 
+            res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 module.exports = router;
