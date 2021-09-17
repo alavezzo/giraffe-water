@@ -1,15 +1,23 @@
 {{> post-info post}}
-
+ 
 {{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <!-- Replace with your content -->
+      <div class="px-4 py-6 sm:px-0">
+        <div class="border-4 border-dashed border-gray-200 rounded-lg">
+            <form class="comment-form">
+                <div>
+                    <textarea name="comment-body"></textarea>
+                </div>
 
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
+                <div>
+                    <button type="submit">add comment</button>
+                </div>
+            </form>
+        </div>
+      </div>
+      <!-- /End replace -->
+    </div>
 {{/if}}
 
 {{> comments post.comments}}
@@ -17,3 +25,7 @@
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 {{/if}}
+
+
+
+
