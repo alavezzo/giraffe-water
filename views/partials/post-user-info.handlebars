@@ -1,4 +1,4 @@
- <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+<div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
       <div class="px-4 py-6 sm:px-0">
                 <div class="border-4 border-gray-200 rounded-t-lg bg-gray-200 flex justify-between shadow">
                     <div class="p-1 text-lg inline-block">
@@ -12,13 +12,10 @@
                     <div class="p-2 bg-lightblue">
                         {{post_text}} 
                     </div>
-                    <div class="p-2">
-                        <a href="/post/{{id}}">
-                        {{comments.length}} comments
-                        </a>
+                    <div class="flex justify-between p-2">
+                        <a href="/dashboard/edit/{{id}}" class="edit-link inline-block">Edit post</a>
+                        <a href="/post/{{id}}" class="inline-block">{{comments.length}} comments</a>
                     </div>
                 </div>
       </div>
-    </div>
-
-
+</div>
