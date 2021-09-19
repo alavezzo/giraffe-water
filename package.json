@@ -8,8 +8,7 @@
     "start": "node server.js",
     "watch": "nodemon server.js",
     "seed": "node seeds/index.js",
-    "dev": "postcss ./src/styles.css -o ./public/css/styles.css",
-    "build": "NODE_ENV=production postcss src/styles.css -o public/css/styles.css && cleancss -o public/css/styles.css public/css/styles.css"
+    "build": "postcss ./src/styles.css -o ./public/css/styles.css"
   },
   "repository": {
     "type": "git",
