@@ -7,8 +7,7 @@
     "test": "jest",
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "seed": "node seeds/index.js",
-    "build": "postcss ./src/styles.css -o ./public/css/styles.css"
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +22,6 @@
   "dependencies": {
     "autoprefixer": "^10.3.4",
     "bcrypt": "^5.0.1",
-    "clean-css-cli": "^5.3.3",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -35,7 +33,6 @@
     "tailwindcss": "^2.2.15"
   },
   "devDependencies": {
-    "jest": "^27.2.0",
     "nodemon": "^2.0.12"
   }
 }
