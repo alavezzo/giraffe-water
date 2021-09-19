@@ -1,0 +1,18 @@
+
+<div class="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
+  {{#each this}}
+        <div class="mt-4 ml-20">
+                <section class="shadow rounded-lg">
+                    <div class=" p-2 rounded-t-lg">
+                    {{comment_text}}
+                    </div>
+                    <div class="bg-gray-100 text-xs text-right p-2 rounded-b-lg">
+                    {{user.username}} on {{format_date created_at}}
+                    </div>
+                </section> 
+            </div>
+    {{/each}}
+</div>
+
+
+
