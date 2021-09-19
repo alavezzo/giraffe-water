@@ -1,20 +1,18 @@
-{{#each this}}
-<div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-      <div class="px-4 py-6 sm:px-0">
-        <div class="border-4 border-dashed border-gray-200 rounded-lg">
-            <div class="comments">
-                <section class="comment">
-                    <div class="meta">
-                    {{user.username}} on {{created_at}}
-                    </div>
-                    <div class="text">
+
+<div class="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
+  {{#each this}}
+        <div class="mt-4 ml-20">
+                <section class="shadow rounded-lg">
+                    <div class=" p-2 rounded-t-lg">
                     {{comment_text}}
+                    </div>
+                    <div class="bg-gray-100 text-xs text-right p-2 rounded-b-lg">
+                    {{user.username}} on {{format_date created_at}}
                     </div>
                 </section> 
             </div>
-        </div>
-      </div>
+    {{/each}}
 </div>
-{{/each}}
+
 
 

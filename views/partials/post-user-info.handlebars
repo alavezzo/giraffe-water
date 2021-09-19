@@ -5,7 +5,7 @@
                         <h3>{{title}}</h3>
                     </div>
                     <div class="p-1 text-sm inline-block">
-                        By {{user.username}} on {{created_at}}
+                        By {{user.username}} on {{format_date created_at}}
                     </div>
                 </div>
                 <div class="shadow rounded-b-lg">
@@ -14,7 +14,7 @@
                     </div>
                     <div class="flex justify-between p-2">
                         <a href="/dashboard/edit/{{id}}" class="edit-link inline-block">Edit post</a>
-                        <a href="/post/{{id}}" class="inline-block">{{comments.length}} comments</a>
+                        <a href="/post/{{id}}" class="inline-block">{{comments.length}} {{format_plural "comment" comments.length}}</a>
                     </div>
                 </div>
       </div>
