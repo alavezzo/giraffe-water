@@ -1,5 +1,5 @@
 {
-  "name": "giraffe-water",
+  "name": "talking-about-tech",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alavezzo/giraffe-water.git"
+    "url": "git+https://github.com/alavezzo/talking-about-tech.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alavezzo/giraffe-water/issues"
+    "url": "https://github.com/alavezzo/talking-about-tech/issues"
   },
-  "homepage": "https://github.com/alavezzo/giraffe-water#readme",
+  "homepage": "https://github.com/alavezzo/talking-about-tech#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
