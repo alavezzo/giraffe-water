@@ -22,17 +22,18 @@
   },
   "homepage": "https://github.com/alavezzo/talking-about-tech#readme",
   "dependencies": {
+    "autoprefixer": "^10.3.4",
     "bcrypt": "^5.0.1",
+    "clean-css-cli": "^5.3.3",
     "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.0",
     "postcss-cli": "^8.3.1",
     "sequelize": "^6.6.5",
-    "tailwindcss": "^2.2.15",
-    "autoprefixer": "^10.3.4",
-    "dotenv": "^10.0.0"
+    "tailwindcss": "^2.2.15"
   },
   "devDependencies": {
     "jest": "^27.2.0",
