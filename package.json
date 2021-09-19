@@ -8,8 +8,8 @@
     "start": "node server.js",
     "watch": "nodemon server.js",
     "seed": "node seeds/index.js",
-    "build": "postcss ./src/styles.css -o ./public/stylesheets/styles.css",
-    "prod": "NODE_ENV=production postcss ./src/styles.css -o ./public/stylesheets/styles.css"
+    "dev": "postcss ./src/styles.css -o ./public/stylesheets/styles.css",
+    "build": "NODE_ENV=production postcss ./src/styles.css -o ./public/stylesheets/styles.css && cleancss -o ./public/stylesheets/styles.css ./public/stylesheets/styles.css"
   },
   "repository": {
     "type": "git",
